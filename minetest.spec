@@ -1,6 +1,6 @@
 Name:     minetest
-Version:  5.1.0
-Release:  3%{?dist}
+Version:  5.2.0
+Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -15,9 +15,6 @@ Source5:  %{name}.README
 Source6:  https://github.com/minetest/minetest_game/archive/%{version}/%{name}_game-%{version}.tar.gz
 Source7:  http://www.gnu.org/licenses/lgpl-2.1.txt
 Source8:  default.conf
-
-# https://github.com/minetest/minetest/issues/4483
-#Patch0001:      0001-use-pkg-config-to-find-luajit.patch
 
 %if 0%{?rhel}
 ExclusiveArch:  %{ix86} x86_64
@@ -68,7 +65,7 @@ Minetest multiplayer server. This package does not require X Window System
 
 pushd games
 tar xf %{SOURCE6}
-mv %{name}_game-5.1.0 %{name}_game
+mv %{name}_game-5.2.0 %{name}_game
 popd
 
 cp %{SOURCE7} doc/
@@ -180,6 +177,9 @@ exit 0
 %{_mandir}/man6/%{name}server.*
 
 %changelog
+
+* Sat May 2 2020 Aleksandra Fedorova <alpha@bookwar.info> - 5.2.0-1
+- Update to new upstream version 5.2.0
 
 * Sun Mar 29 2020 Aleksandra Fedorova <alpha@bookwar.info> - 5.1.0-3
 - Set path to jsoncpp explicitly
