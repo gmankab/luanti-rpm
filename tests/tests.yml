@@ -1,0 +1,11 @@
+- hosts: localhost
+  roles:
+    - role: standard-test-basic                         
+      tags:
+        - classic
+      required_packages:
+        - minetest-server
+      tests:
+        - simple:
+            dir: .
+            run: "minetestserver --version"
