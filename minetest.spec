@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.2.0
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -177,6 +177,8 @@ exit 0
 %{_mandir}/man6/%{name}server.*
 
 %changelog
+* Sat May 30 2020 Björn Esser <besser82@fedoraproject.org> - 5.2.0-2
+- Rebuild (jsoncpp)
 
 * Sat May 2 2020 Aleksandra Fedorova <alpha@bookwar.info> - 5.2.0-1
 - Update to new upstream version 5.2.0
