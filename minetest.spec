@@ -89,11 +89,11 @@ find . -name .luacheckrc -print -delete
        -DENABLE_FREETYPE=TRUE       \
        -DBUILD_SERVER=TRUE          \
        -DJSON_INCLUDE_DIR=/usr/include/json \
-.
-%make_build
+%{nil}
+%cmake_build
 
 %install
-%make_install
+%cmake_install
 
 # Add desktop file
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications %{SOURCE1}
