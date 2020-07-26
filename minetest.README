@@ -1,4 +1,10 @@
-== How to start ==
+== For desktop ==
+
+Install via:
+
+    dnf install minetest
+
+You will get client, server and the game data.
 
 To run the game use the command 'minetest' or choose Minetest from
 applications menu.
@@ -11,19 +17,25 @@ folder.
 To connect to the existing Minetest server specify the server name (or
 IP) and port number. Server name might be 'localhost' as well.
 
-Check the Wiki for gameplay details:
-http://c55.me/minetest/wiki/doku.php?id=crafting
+See https://minetest.net for more details.
 
-Available public servers:
-http://c55.me/minetest/wiki/doku.php?id=public_servers
+== For server ==
 
-== Minetest server ==
+Install via:
+
+    dnf install minetest-server
+
+You can optionally install minetest game via:
+
+    dnf install minetest-data-game
 
 To run the system-wide Minetest server use the command
-# systemctl start minetest.service
+
+    systemctl start minetest.service
 
 To make Minetest server run on boot use
-# systemctl enable minetest.service 
+
+    systemctl enable minetest.service
 
 Minetest server uses configuration file /etc/minetest.conf. It listens
 to the port 30000 and stores the data in /var/lib/minetest. This can
@@ -33,6 +45,3 @@ Minetest-server also provides the rsyslog configuration file. You need
 to restart the rsyslog daemon after minetest installation for this
 file to take effect. After rsyslog restart minetest logs will be put
 in /var/log/minetest.log
-
-Check the project Wiki for server commands and privilege system 
-http://c55.me/minetest/wiki/doku.php?id=server_commands
