@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.3.0
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -205,6 +205,9 @@ exit 0
 
 
 %changelog
+* Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 5.3.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Sun Jul 26 2020 Aleksandra Fedorova <alpha@bookwar.info> - 5.3.0-1
 - Update to new upstream version 5.3.0
 - Add -data subpackages (patch by Olivier Samyn)
