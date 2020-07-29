@@ -95,6 +95,7 @@ find . -name .travis.yml -print -delete
 find . -name .luacheckrc -print -delete
 
 %build
+%define _lto_cflags %{nil}
 # -DENABLE_FREETYPE=ON needed for Unicode in text chat
 %cmake -DENABLE_CURL=TRUE           \
        -DENABLE_LEVELDB=TRUE        \
