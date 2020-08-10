@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.3.0
-Release:  2%{?dist}
+Release:  3%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -95,7 +95,9 @@ find . -name .travis.yml -print -delete
 find . -name .luacheckrc -print -delete
 
 %build
+%ifarch aarch64
 %define _lto_cflags %{nil}
+%endif
 # -DENABLE_FREETYPE=ON needed for Unicode in text chat
 %cmake -DENABLE_CURL=TRUE           \
        -DENABLE_LEVELDB=TRUE        \
@@ -206,6 +208,9 @@ exit 0
 
 
 %changelog
+* Mon Aug 10 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 5.3.0-3
+- Disable LTO only for aarch64
+
 * Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 5.3.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
