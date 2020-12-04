@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.3.0
-Release:  3%{?dist}
+Release:  4%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -15,6 +15,7 @@ Source5:  %{name}.README
 Source6:  https://github.com/minetest/minetest_game/archive/%{version}/%{name}_game-%{version}.tar.gz
 Source7:  http://www.gnu.org/licenses/lgpl-2.1.txt
 Source8:  default.conf
+Patch0:    %{name}-gcc11.patch
 
 %if 0%{?rhel}
 ExclusiveArch:  %{ix86} x86_64
@@ -208,6 +209,9 @@ exit 0
 
 
 %changelog
+* Fri Dec 04 2020 Jeff Law <law@redhat.com> - 5.3.0-4
+- Fix missing #include for gcc-11
+
 * Mon Aug 10 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 5.3.0-3
 - Disable LTO only for aarch64
 
