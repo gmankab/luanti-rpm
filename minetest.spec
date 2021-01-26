@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.3.0
-Release:  4%{?dist}
+Release:  5%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -209,6 +209,9 @@ exit 0
 
 
 %changelog
+* Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 5.3.0-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Fri Dec 04 2020 Jeff Law <law@redhat.com> - 5.3.0-4
 - Fix missing #include for gcc-11
 
