@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.3.0
-Release:  5%{?dist}
+Release:  6%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -209,6 +209,10 @@ exit 0
 
 
 %changelog
+* Tue Mar 02 2021 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 5.3.0-6
+- Rebuilt for updated systemd-rpm-macros
+  See https://pagure.io/fesco/issue/2583.
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 5.3.0-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
