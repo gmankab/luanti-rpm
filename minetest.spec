@@ -1,6 +1,6 @@
 Name:     minetest
-Version:  5.3.0
-Release:  6%{?dist}
+Version:  5.4.1
+Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -15,7 +15,7 @@ Source5:  %{name}.README
 Source6:  https://github.com/minetest/minetest_game/archive/%{version}/%{name}_game-%{version}.tar.gz
 Source7:  http://www.gnu.org/licenses/lgpl-2.1.txt
 Source8:  default.conf
-Patch0:    %{name}-gcc11.patch
+Patch0:   %{name}-gcc11.patch
 
 %if 0%{?rhel}
 ExclusiveArch:  %{ix86} x86_64
@@ -29,7 +29,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  cmake >= 2.6.0
 BuildRequires:  irrlicht-devel
 BuildRequires:  bzip2-devel gettext-devel sqlite-devel zlib-devel
-BuildRequires:  libpng-devel libjpeg-turbo-devel libXxf86vm mesa-libGL-devel
+BuildRequires:  libpng-devel libjpeg-turbo-devel libXxf86vm-devel mesa-libGL-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  systemd
 BuildRequires:  openal-soft-devel
@@ -41,6 +41,9 @@ BuildRequires:  leveldb-devel
 BuildRequires:  gmp-devel
 BuildRequires:  libappstream-glib
 BuildRequires:  freetype-devel
+BuildRequires:  spatialindex-devel
+BuildRequires:  openssl-devel
+BuildRequires:  libogg-devel
 
 Requires:       %{name}-server = %{version}-%{release}
 Requires:       %{name}-data-game = %{version}-%{release}
@@ -99,6 +102,8 @@ find . -name .luacheckrc -print -delete
 %ifarch aarch64
 %define _lto_cflags %{nil}
 %endif
+LDFLAGS="$LDFLAGS $(pkg-config --libs openssl)"
+export LDFLAGS
 # -DENABLE_FREETYPE=ON needed for Unicode in text chat
 %cmake -DENABLE_CURL=TRUE           \
        -DENABLE_LEVELDB=TRUE        \
@@ -209,6 +214,9 @@ exit 0
 
 
 %changelog
+* Fri Apr 16 2021 Gwyn Ciesla <gwync@protonmail.com> - 5.4.1-1
+- 5.4.1
+
 * Tue Mar 02 2021 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 5.3.0-6
 - Rebuilt for updated systemd-rpm-macros
   See https://pagure.io/fesco/issue/2583.
