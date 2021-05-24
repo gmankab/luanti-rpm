@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.4.1
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -44,6 +44,8 @@ BuildRequires:  freetype-devel
 BuildRequires:  spatialindex-devel
 BuildRequires:  openssl-devel
 BuildRequires:  libogg-devel
+BuildRequires:  libpq-devel
+BuildRequires:  hiredis-devel
 
 Requires:       %{name}-server = %{version}-%{release}
 Requires:       %{name}-data-game = %{version}-%{release}
@@ -113,6 +115,9 @@ export LDFLAGS
        -DENABLE_SYSTEM_JSONCPP=TRUE \
        -DENABLE_SYSTEM_GMP=TRUE     \
        -DENABLE_FREETYPE=TRUE       \
+       -DENABLE_REDIS=TRUE          \
+       -DENABLE_POSTGRESQL=TRUE     \
+       -DPostgreSQL_TYPE_INCLUDE_DIR=%{_includedir}/pgsql \
        -DBUILD_SERVER=TRUE          \
        -DJSON_INCLUDE_DIR=/usr/include/json \
 %{nil}
@@ -214,6 +219,9 @@ exit 0
 
 
 %changelog
+* Mon May 24 2021 Gwyn Ciesla <gwync@protonmail.com> - 5.4.1-2
+- Enable redis and postgresql support.
+
 * Fri Apr 16 2021 Gwyn Ciesla <gwync@protonmail.com> - 5.4.1-1
 - 5.4.1
 
