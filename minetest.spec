@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.4.1
-Release:  2%{?dist}
+Release:  3%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -219,6 +219,9 @@ exit 0
 
 
 %changelog
+* Thu Jul 22 2021 Fedora Release Engineering <releng@fedoraproject.org> - 5.4.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Mon May 24 2021 Gwyn Ciesla <gwync@protonmail.com> - 5.4.1-2
 - Enable redis and postgresql support.
 
