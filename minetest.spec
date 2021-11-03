@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.4.1
-Release:  4%{?dist}
+Release:  5%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -219,6 +219,9 @@ exit 0
 
 
 %changelog
+* Wed Nov 03 2021 Björn Esser <besser82@fedoraproject.org> - 5.4.1-5
+- Rebuild (jsoncpp)
+
 * Tue Sep 14 2021 Sahana Prasad <sahana@redhat.com> - 5.4.1-4
 - Rebuilt with OpenSSL 3.0.0
 
