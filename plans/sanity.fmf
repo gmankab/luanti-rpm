@@ -1,0 +1,10 @@
+summary: Basic sanity test
+
+prepare:
+  - name: Install packages
+    how: install
+    package:
+      - minetest-server
+
+execute:
+    script: minetestserver --version
