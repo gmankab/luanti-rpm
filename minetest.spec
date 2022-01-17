@@ -1,6 +1,6 @@
 Name:     minetest
 Version:  5.4.1
-Release:  5%{?dist}
+Release:  6%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -219,6 +219,9 @@ exit 0
 
 
 %changelog
+* Mon Jan 17 2022 Kevin Fenzi <kevin@scrye.com> - 5.4.1-6
+- Rebuild for hiredis 1.0.2
+
 * Wed Nov 03 2021 Björn Esser <besser82@fedoraproject.org> - 5.4.1-5
 - Rebuild (jsoncpp)
 
