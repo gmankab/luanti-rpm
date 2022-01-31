@@ -1,6 +1,7 @@
+%global irr_version 1.9.0mt4
 Name:     minetest
-Version:  5.4.1
-Release:  7%{?dist}
+Version:  5.5.0
+Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -15,6 +16,7 @@ Source5:  %{name}.README
 Source6:  https://github.com/minetest/minetest_game/archive/%{version}/%{name}_game-%{version}.tar.gz
 Source7:  http://www.gnu.org/licenses/lgpl-2.1.txt
 Source8:  default.conf
+Source9:  https://github.com/minetest/irrlicht/archive/%{irr_version}/%{name}-%{irr_version}.tar.gz
 Patch0:   %{name}-gcc11.patch
 
 %if 0%{?rhel}
@@ -46,10 +48,13 @@ BuildRequires:  openssl-devel
 BuildRequires:  libogg-devel
 BuildRequires:  libpq-devel
 BuildRequires:  hiredis-devel
+BuildRequires:  libzstd-devel
 
 Requires:       %{name}-server = %{version}-%{release}
 Requires:       %{name}-data-game = %{version}-%{release}
 Requires:       hicolor-icon-theme
+
+Provides:  bundled(irrlicht) = %{irr_version}
 
 %description
 Game of mining, crafting and building in the infinite world of cubic blocks with
@@ -89,6 +94,11 @@ your own game.
 pushd games
 tar xf %{SOURCE6}
 mv %{name}_game-%{version} %{name}_game
+popd
+
+pushd lib
+tar xf %{SOURCE9}
+mv irrlicht-%{irr_version} irrlichtmt
 popd
 
 cp %{SOURCE7} doc/
@@ -205,7 +215,7 @@ exit 0
 %config(noreplace) %{_sysconfdir}/logrotate.d/%{name}-server
 %config(noreplace) %{_sysconfdir}/rsyslog.d/%{name}.conf
 %attr(-,minetest,minetest)%{_sharedstatedir}/%{name}/
-%attr(-,minetest,minetest)%{_sysconfdir}/%{name}/
+%config(noreplace) %attr(-,minetest,minetest)%{_sysconfdir}/%{name}/
 %attr(-,minetest,minetest)%{_sysconfdir}/sysconfig/%{name}/
 %{_mandir}/man6/%{name}server.*
 
@@ -219,6 +229,9 @@ exit 0
 
 
 %changelog
+* Mon Jan 31 2022 Gwyn Ciesla <gwync@protonmail.com> - 5.5.0-1
+- 5.5.0
+
 * Thu Jan 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 5.4.1-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
