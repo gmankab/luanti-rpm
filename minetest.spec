@@ -1,6 +1,6 @@
 %global irr_version 1.9.0mt4
 Name:     minetest
-Version:  5.5.0
+Version:  5.5.1
 Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
@@ -229,6 +229,9 @@ exit 0
 
 
 %changelog
+* Mon May 16 2022 Gwyn Ciesla <gwync@protonmail.com> - 5.5.1-1
+- 5.5.1
+
 * Mon Jan 31 2022 Gwyn Ciesla <gwync@protonmail.com> - 5.5.0-1
 - 5.5.0
 
