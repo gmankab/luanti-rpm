@@ -1,7 +1,7 @@
-%global irr_version 1.9.0mt4
+%global irr_version 1.9.0mt7
 Name:     minetest
-Version:  5.5.1
-Release:  2%{?dist}
+Version:  5.6.0
+Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -49,6 +49,7 @@ BuildRequires:  libogg-devel
 BuildRequires:  libpq-devel
 BuildRequires:  hiredis-devel
 BuildRequires:  libzstd-devel
+BuildRequires:  libXi-devel
 
 Requires:       %{name}-server = %{version}-%{release}
 Requires:       %{name}-data-game = %{version}-%{release}
@@ -229,6 +230,9 @@ exit 0
 
 
 %changelog
+* Fri Aug 05 2022 Gwyn Ciesla <gwync@protonmail.com> - 5.6.0-1
+- 5.6.0
+
 * Thu Jul 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 5.5.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
 
