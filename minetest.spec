@@ -29,7 +29,6 @@ ExclusiveArch:  %{arm} %{ix86} x86_64 %{mips} aarch64
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  cmake >= 2.6.0
-BuildRequires:  irrlicht-devel
 BuildRequires:  bzip2-devel gettext-devel sqlite-devel zlib-devel
 BuildRequires:  libpng-devel libjpeg-turbo-devel libXxf86vm-devel mesa-libGL-devel
 BuildRequires:  desktop-file-utils
