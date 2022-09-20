@@ -1,6 +1,6 @@
-%global irr_version 1.9.0mt7
+%global irr_version 1.9.0mt8
 Name:     minetest
-Version:  5.6.0
+Version:  5.6.1
 Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
@@ -229,6 +229,9 @@ exit 0
 
 
 %changelog
+* Tue Sep 20 2022 Gwyn Ciesla <gwync@protonmail.com> - 5.6.1-1
+- 5.6.1
+
 * Fri Aug 05 2022 Gwyn Ciesla <gwync@protonmail.com> - 5.6.0-1
 - 5.6.0
 
