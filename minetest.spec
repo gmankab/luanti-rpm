@@ -2,7 +2,7 @@
 %global minetest_game_version 5.8.0
 Name:     minetest
 Version:  5.8.0
-Release:  5%{?dist}
+Release:  6%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -224,6 +224,9 @@ exit 0
 
 
 %changelog
+* Thu May 02 2024 Gwyn Ciesla <gwync@protonmail.com> - 5.8.0-6
+- hiredis rebuild
+
 * Thu Feb 01 2024 Gwyn Ciesla <gwync@protonmail.com> - 5.8.0-5
 - Patch for FTBFS.
 
