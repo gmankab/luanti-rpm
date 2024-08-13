@@ -2,7 +2,7 @@
 %global minetest_game_version 5.8.0
 Name:     minetest
 Version:  5.9.0
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -221,6 +221,9 @@ exit 0
 
 
 %changelog
+* Tue Aug 13 2024 Gwyn Ciesla <gwync@protonmail.com> - 5.9.0-2
+- Bump EVR
+
 * Tue Aug 13 2024 Gwyn Ciesla <gwync@protonmail.com> - 5.9.0-1
 - 5.9.0
 
