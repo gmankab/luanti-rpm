@@ -1,0 +1,11 @@
+--- a/misc/net.minetest.minetest.metainfo.xml~	2024-08-11 10:54:55.000000000 -0500
++++ b/misc/net.minetest.minetest.metainfo.xml	2024-08-13 09:37:22.786449508 -0500
+@@ -113,7 +113,7 @@
+         </screenshot>
+     </screenshots>
+ 
+-    <icon type="stock">minetest</icon>
++    <icon>minetest</icon>
+ 
+     <categories>
+         <category>Game</category>
