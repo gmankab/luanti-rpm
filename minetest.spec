@@ -1,8 +1,8 @@
 %global irr_version 1.9.0mt13
 %global minetest_game_version 5.8.0
 Name:     minetest
-Version:  5.8.0
-Release:  7%{?dist}
+Version:  5.9.0
+Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 License:  LGPLv2+ and CC-BY-SA
@@ -17,9 +17,9 @@ Source5:  %{name}.README
 Source6:  https://github.com/minetest/minetest_game/archive/%{minetest_game_version}/%{name}_game-%{minetest_game_version}.tar.gz
 Source7:  http://www.gnu.org/licenses/lgpl-2.1.txt
 Source8:  default.conf
-Source9:  https://github.com/minetest/irrlicht/archive/%{irr_version}/%{name}-%{irr_version}.tar.gz
-Patch0:   %{name}-gcc11.patch
-Patch1:   includes.patch
+#Source9:  https://github.com/minetest/irrlicht/archive/%%{irr_version}/%%{name}-%%{irr_version}.tar.gz
+Patch0:   includes.patch
+Patch1:   metainfo.patch
 
 %if 0%{?rhel}
 ExclusiveArch:  %{ix86} x86_64
@@ -88,10 +88,10 @@ Minetest common data. This package is shared between minetest server and client.
 %prep
 %autosetup -p1
 
-pushd lib
-tar xf %{SOURCE9}
-mv irrlicht-%{irr_version} irrlichtmt
-popd
+#pushd lib
+#tar xf %%{SOURCE9}
+#mv irrlicht-%%{irr_version} irrlichtmt
+#popd
 
 cp %{SOURCE7} doc/
 
@@ -171,10 +171,7 @@ rm -rf %{buildroot}%{_datadir}/doc/%{name}
 
 %find_lang %{name}
 
-#move appdata file to the proper location, and validate
-mkdir -p %{buildroot}%{_datadir}/appdata
-mv %{buildroot}%{_datadir}/metainfo/net.minetest.minetest.appdata.xml %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
-appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/net.%{name}.%{name}.metainfo.xml
 
 %pre server
 getent group %{name} >/dev/null || groupadd -r %{name}
@@ -204,7 +201,7 @@ exit 0
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_mandir}/man6/%{name}.*
-%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/metainfo/net.%{name}.%{name}.metainfo.xml
 
 %files server
 %license doc/lgpl-2.1.txt
@@ -224,6 +221,9 @@ exit 0
 
 
 %changelog
+* Tue Aug 13 2024 Gwyn Ciesla <gwync@protonmail.com> - 5.9.0-1
+- 5.9.0
+
 * Thu Jul 18 2024 Fedora Release Engineering <releng@fedoraproject.org> - 5.8.0-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_41_Mass_Rebuild
 
