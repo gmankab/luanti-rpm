@@ -2,10 +2,11 @@
 %global minetest_game_version 5.8.0
 Name:     minetest
 Version:  5.9.0
-Release:  2%{?dist}
+Release:  3%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
-License:  LGPLv2+ and CC-BY-SA
+# Automatically converted from old format: LGPLv2+ and CC-BY-SA - review is highly recommended.
+License:  LicenseRef-Callaway-LGPLv2+ AND LicenseRef-Callaway-CC-BY-SA
 URL:      http://minetest.net/
 
 Source0:  https://github.com/minetest/minetest/archive/%{version}/%{name}-%{version}.tar.gz
@@ -221,6 +222,9 @@ exit 0
 
 
 %changelog
+* Mon Sep 02 2024 Miroslav Suchý <msuchy@redhat.com> - 5.9.0-3
+- convert license to SPDX
+
 * Tue Aug 13 2024 Gwyn Ciesla <gwync@protonmail.com> - 5.9.0-2
 - Bump EVR
 
