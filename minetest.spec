@@ -1,8 +1,8 @@
 %global irr_version 1.9.0mt13
 %global minetest_game_version 5.8.0
 Name:     minetest
-Version:  5.9.0
-Release:  3%{?dist}
+Version:  5.9.1
+Release:  1%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 # Automatically converted from old format: LGPLv2+ and CC-BY-SA - review is highly recommended.
@@ -222,6 +222,9 @@ exit 0
 
 
 %changelog
+* Mon Sep 16 2024 Gwyn Ciesla <gwync@protonmail.com> - 5.9.1-1
+- 5.9.1
+
 * Mon Sep 02 2024 Miroslav Suchý <msuchy@redhat.com> - 5.9.0-3
 - convert license to SPDX
 
