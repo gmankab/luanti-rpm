@@ -6,7 +6,7 @@ After=syslog.target network.target
 EnvironmentFile=/etc/sysconfig/minetest/%i.conf
 User=minetest
 Type=simple
-ExecStart=/usr/bin/minetestserver --config /etc/minetest/%i.conf --port $PORT --map-dir /var/lib/minetest/%i/
+ExecStart=/usr/bin/minetestserver --config /etc/minetest/%i.conf --port $PORT --gameid $GAMEID --map-dir /var/lib/minetest/%i/
 
 [Install]
 WantedBy=multi-user.target
