@@ -2,14 +2,14 @@
 %global minetest_game_version 5.8.0
 Name:     minetest
 Version:  5.17.0
-Release:  1%{?dist}
+Release:  3%{?dist}
 Summary:  Multiplayer infinite-world block sandbox with survival mode
 
 # Automatically converted from old format: LGPLv2+ and CC-BY-SA - review is highly recommended.
 License:  LicenseRef-Callaway-LGPLv2+ AND LicenseRef-Callaway-CC-BY-SA
 URL:      https://luanti.org
 
-Source0:  https://github.com/luanti-org/luanti/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:  https://github.com/gmankab/luanti/archive/%{version}/%{name}-%{version}-dig.tar.gz
 Source2:  %{name}@.service
 Source3:  %{name}.rsyslog
 Source4:  %{name}.logrotate
